@@ -10,7 +10,7 @@ By the time you finish this guide, you will be able to:
 
 - Explain what an AI agent is and how it differs from a chatbot
 - Design an agent architecture that includes tools, memory, and planning
-- Build agents that search, summarize, and take action
+- Build agents
 - Add memory with retrieval and vector databases
 - Orchestrate multi-agent workflows
 - Deploy agents with APIs and simple UIs
