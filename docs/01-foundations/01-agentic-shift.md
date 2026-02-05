@@ -22,20 +22,30 @@ A chatbot is reactive. It waits for your prompt and responds. An agent is proact
 
 The difference is not just better language. It is **tool use + decision making + feedback loops**.
 
+```mermaid
+flowchart LR
+  A[User asks a question] --> B[Chatbot replies]
+
+  C[User gives a goal] --> D[Agent plans steps]
+  D --> E[Agent uses tools]
+  E --> F[Agent verifies result]
+  F --> G[Task completed]
+```
+
 ## 1.3 Foundations You Must Know
 To build agents that work in the real world, you need to understand three core foundations:
 
 1. **Control Flow**
-   - Agents operate in steps. Each step produces a decision: continue, call a tool, ask a question, or stop.
-   - You control the loop with code, not prompts alone.
+- Agents operate in steps. Each step produces a decision: continue, call a tool, ask a question, or stop.
+- You control the loop with code, not prompts alone.
 
 2. **State**
-   - An agent must carry memory across steps: what it knows, what it did, and what it plans next.
-   - State can be short-term (context window) or long-term (database, vector store, logs).
+- An agent must carry memory across steps: what it knows, what it did, and what it plans next.
+- State can be short-term (context window) or long-term (database, vector store, logs).
 
 3. **Tools**
-   - Tools are the bridge to the real world: APIs, databases, browsers, file systems.
-   - Without tools, agents are confined to text. With tools, they become operators.
+- Tools are the bridge to the real world: APIs, databases, browsers, file systems.
+- Without tools, agents are confined to text. With tools, they become operators.
 
 ## 1.4 Architecture of an AI Agent
 At a high level, most agent systems follow a simple architecture:
@@ -45,6 +55,18 @@ At a high level, most agent systems follow a simple architecture:
 - **Tooling Layer**: APIs and functions that do the work
 - **Memory Layer**: Context, logs, knowledge store
 - **Orchestration Layer**: The loop that coordinates it all
+
+```mermaid
+flowchart TB
+  I[Input / Trigger] --> R[Reasoning / Planning]
+  R --> T[Tools / APIs]
+  T --> O[Output / Result]
+  R --> M[Memory]
+  M --> R
+  O --> F{Is goal done?}
+  F -- No --> R
+  F -- Yes --> Done[Stop]
+```
 
 Think of it as a small company:
 - The **LLM** is the strategist
@@ -61,10 +83,26 @@ A good analogy for agents is a chef running a busy kitchen:
 
 No single step is enough. The power comes from looping through the process quickly and accurately.
 
+```mermaid
+flowchart LR
+  Order[Order ticket] --> Plan[Chef plans]
+  Plan --> Cook[Chef cooks]
+  Cook --> Taste[Taste and adjust]
+  Taste --> Serve[Serve meal]
+```
+
 ## 1.6 The Agent Loop
 Every agent you build in this repo will follow the same loop:
 
 **Perception -> Reasoning (Brain) -> Action (Tools) -> Feedback**
+
+```mermaid
+flowchart LR
+  P[Perception] --> R[Reasoning]
+  R --> A[Action]
+  A --> F[Feedback]
+  F --> P
+```
 
 If you understand this loop, you can design agents for almost any task.
 
