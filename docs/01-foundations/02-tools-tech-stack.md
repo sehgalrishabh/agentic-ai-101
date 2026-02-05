@@ -114,4 +114,4 @@ flowchart TB
 
 ## What Comes Next
 
-In Chapter 3, you will build your first agent, a system that uses real tools, a real API, and a real prompt.
+In Chapter 3, you will build your first agent: a “Search & Summarize” system that uses real tools, a real API, and a real prompt.

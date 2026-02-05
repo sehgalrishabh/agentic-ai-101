@@ -10,7 +10,7 @@ By the time you finish this guide, you will be able to:
 
 - Explain what an AI agent is and how it differs from a chatbot
 - Design an agent architecture that includes tools, memory, and planning
-- Build agents
+- Build agents that search, summarize, and take action
 - Add memory with retrieval and vector databases
 - Orchestrate multi-agent workflows
 - Deploy agents with APIs and simple UIs
@@ -53,6 +53,6 @@ Use `SUMMARY.md` as your table of contents, and work through the chapters in ord
 
 You do not need advanced math or research-level AI knowledge to start. You do need:
 
-- Basic Python familiarity
+- Basic Python familiarity (we are Python-first here)
 - Curiosity and patience
 - A willingness to build, break, and rebuild

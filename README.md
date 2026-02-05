@@ -45,10 +45,10 @@ Goal: Get hands dirty building functional agents.
 
 **Chapter 3: Your First Agent (The "Hello World")**
 
-- Project: A Simple Agent
+- Project: A Simple "Search & Summarize" Agent
 - Skills:
   - Setting up an Environment (.env, API keys)
-  - Building a Tool
+  - Building a Tool: Integrating a search API (e.g., Tavily or Serper)
   - Writing the Prompt: Teaching the LLM when to use the tool
 
 **Chapter 4: Memory & Context (Giving the Agent a Brain)**
